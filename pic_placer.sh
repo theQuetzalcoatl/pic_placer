@@ -88,6 +88,6 @@ for picture in ${picture_path[@]}; do
 	string_date_to_numerical $(ls -l $picture | grep -P -o " (jan|febr|márc|mar|apr|ápr|may|máj|june|jún|july|júl|aug|sept|szept|oct|okt|nov|dec) " | cut -d " " -f 2)
 	picture_month=$?
 	if [ 13 -eq $? ]; then echo "Non valid month of \"$picture\" was found/calculated."; continue; fi
-  cp $picture $HOME/Pictures/$picture_year-$picture_month
+  cp $picture $HOME/Pictures/$picture_year-$picture_month &
 done
 
