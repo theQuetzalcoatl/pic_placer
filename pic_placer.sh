@@ -54,7 +54,7 @@ fi
 IFS=$'\n'; # changing the internal field seprator from '<space>\t\n' to only '\n' to catch the outputs from now on as lines
 for folder in $(ls "$HOME/Pictures"); do
 	if [ -d "$HOME/Pictures/$folder" ]; then # 
-		if grep -q -P "\d{4}-\d\d?" <<< "$folder"; then rm -r "$HOME/Pictures/$folder"; fi 
+		if grep -q -P "\d{4}-\d\d?" <<< "$folder"; then mv "$HOME/Pictures/$folder" ~/.local/share/Trash/files/; fi 
 	fi
 done
 
